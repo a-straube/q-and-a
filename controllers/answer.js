@@ -11,6 +11,7 @@ QAndA.AnswerController = Ember.Controller.extend({
 			question.get('answers').pushObject(answer);
 			question.save();
 
+			this.set('answer', '');
 			this.transitionToRoute('question', question.id);
 		}
 	}
