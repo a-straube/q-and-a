@@ -1,0 +1,15 @@
+<h1>New question</h1>
+
+<form>
+	<div class="form-group">
+		<label for="question">Ask a question:</label>
+		{{input id="question" class="form-control" value=question}}
+	</div>
+
+	<div class="form-group">
+		<label for="description">Add a description:</label>
+		{{textarea id="description" class="form-control" rows="15" value=description}}
+	</div>
+
+	<button class="btn btn-primary" {{action 'save'}}>Save</button>
+</form>
