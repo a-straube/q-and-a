@@ -1,7 +1,7 @@
 <h1>Q And A</h1>
 <ul>
 	{{#each}}
-		<li>{{#link-to 'question' this.id}}{{question}}{{/link-to}}</li>
+		<li>{{#link-to 'question' this.id}}{{question}}{{/link-to}} by: {{author}}</li>
 	{{/each}}
 </ul>
 
