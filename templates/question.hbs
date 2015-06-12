@@ -1,7 +1,7 @@
 <div class="well page-wrapper question-page">
 	<h1>&nbsp;{{question}}</h1>
 	<hr>
-	<h5>&nbsp;&nbsp;&nbsp;asked by: {{author}}</h5>
+	<h5>&nbsp;&nbsp;&nbsp;<i>asked by: {{author}}</i></h5>
 
 	{{#if isEditing}}
 		<form>
@@ -18,7 +18,9 @@
 			<button class="btn btn-primary" {{action 'save'}}>Save</button>
 		</form>
 	{{else}}
-		<p>{{description}}</p>
+		<p>&nbsp;{{description}}</p>
+
+		<br>
 
 		<button class="btn" {{action 'edit'}}>Edit</button>
 		<button class="btn" {{action 'delete'}}>Delete</button>
