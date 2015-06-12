@@ -1,33 +1,38 @@
-<h1>{{question}}</h1>
-<h3>by: {{author}}</h3>
+<div class="well page-wrapper question-page">
+	<h1>&nbsp;{{question}}</h1>
+	<hr>
+	<h5>&nbsp;&nbsp;&nbsp;asked by: {{author}}</h5>
 
-{{#if isEditing}}
-	<form>
-		<div class="form-group">
-			<label for="question">Ask a question:</label>
-			{{input id="question" class="form-control" value=question}}
-		</div>
+	{{#if isEditing}}
+		<form>
+			<div class="form-group">
+				<label for="question">Edit question:</label>
+				{{input id="question" class="form-control" value=question}}
+			</div>
 
-		<div class="form-group">
-			<label for="description">Add a description:</label>
-			{{textarea id="description" class="form-control" rows="15" value=description}}
-		</div>
+			<div class="form-group">
+				<label for="description">Edit description:</label>
+				{{textarea id="description" class="form-control" rows="15" value=description}}
+			</div>
 
-		<button class="btn btn-primary" {{action 'save'}}>Save</button>
-	</form>
-{{else}}
-	<p>{{description}}</p>
+			<button class="btn btn-primary" {{action 'save'}}>Save</button>
+		</form>
+	{{else}}
+		<p>{{description}}</p>
 
-	<button class="btn btn-primary" {{action 'edit'}}>Edit</button>
-	<button class="btn btn-danger" {{action 'delete'}}>Delete</button>
-{{/if}}
+		<button class="btn" {{action 'edit'}}>Edit</button>
+		<button class="btn" {{action 'delete'}}>Delete</button>
+	{{/if}}
+</div>
 
-<h2>Answers</h2>
+<div class="answers-wrapper">
+	<h2>Answers</h2>
 
-{{#each answers}}
-	<p>{{answer}}</p>
-{{/each}}
+	{{#each answers}}
+		<p>{{answer}}</p>
+	{{/each}}
 
-<p>{{#link-to 'answer' this.id class="btn btn-default"}}New answer{{/link-to}}</p>
+	<p>{{#link-to 'answer' this.id class="btn"}}New answer{{/link-to}}</p>
 
-{{outlet}}
+	{{outlet}}
+</div>

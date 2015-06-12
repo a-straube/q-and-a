@@ -1,8 +1,10 @@
-<h1>Q And A</h1>
-<ul>
-	{{#each}}
-		<li>{{#link-to 'question' this.id}}{{question}}{{/link-to}} by: {{author}}</li>
-	{{/each}}
-</ul>
+<h1><strong><i>Q & A Message Board</i></strong></h1>
+<div class="well page-wrapper">
+	<ul>
+		{{#each}}
+			<li>{{#link-to 'question' this.id}}{{question}}{{/link-to}} asked by: {{author}}</li>
+		{{/each}}
+	</ul>
+</div>
 
-<p>{{#link-to 'new-question' classNames="btn btn-primary"}}Ask a new question{{/link-to}}</p>
+<p>{{#link-to 'new-question' class="btn"}}Ask a new question{{/link-to}}</p>
